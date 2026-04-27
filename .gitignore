@@ -1,0 +1,3 @@
+# Generated files from build.sh templates
+alacritty/.config/alacritty/alacritty.toml
+i3/.config/i3/config
