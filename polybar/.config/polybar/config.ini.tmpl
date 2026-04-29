@@ -1,0 +1,92 @@
+[bar/mybar]
+width = 100%
+margin-top = 4
+margin-bottom = 0
+offset-x = 0
+offset-y = 5px
+height = 18pt
+radius = 6
+override_redirect = false
+pseudo-transparency = false
+
+border-size = 3
+border-top-size = 15
+border-color = #00000000
+
+background = #00000000
+foreground = ${sem_fg}
+
+line-size = 3pt
+line-color = ${sem_accent}
+padding-left = 1
+padding-right = 1
+module-margin = 0
+
+font-0 = "JetBrainsMono Nerd Font:size=10;3"
+font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
+font-2 = "Symbols Nerd Font:size=18;3,5"
+
+modules-left = xworkspaces
+modules-center = xwindow
+modules-right = left-arrow-surface cpu memory date
+
+[module/xworkspaces]
+type = internal/xworkspaces
+label-active = %name%
+label-active-foreground = ${sem_fg}
+label-active-background = ${sem_surface}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ${sem_fg_dim}
+label-occupied-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${sem_surface_hi}
+label-empty-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${sem_danger}
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-foreground = ${sem_fg}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = <label>
+label = " CPU %percentage:2%% "
+label-background = ${sem_surface_hi}
+label-foreground = ${sem_fg}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label>
+label = " RAM %percentage_used:2%% "
+label-foreground = ${sem_fg}
+label-background = ${sem_surface_hi}
+
+[module/date]
+type = internal/date
+interval = 5
+date = %H:%M
+format = <label>
+label = " %date% "
+label-foreground = ${sem_fg}
+label-background = ${sem_surface_hi}
+
+[module/left-arrow-surface]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground = ${sem_surface_hi}
+content-background = #00000000
+
+[module/left-arrow-sep]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground = ${sem_surface_hi}
+content-background = ${sem_surface}

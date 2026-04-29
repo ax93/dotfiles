@@ -1,0 +1,40 @@
+[mgr]
+cwd = { fg = "${sem_fg_dim}" }
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+symlink_target = { fg = "${sem_info}", italic = true }
+marker_copied   = { fg = "${sem_bg}", bg = "${sem_accent}" }
+marker_cut      = { fg = "${sem_bg}", bg = "${sem_danger_hi}" }
+marker_selected = { fg = "${sem_bg}", bg = "${sem_warning}" }
+
+[indicator]
+padding = { open = "▐", close = "▌" }
+
+[tabs]
+active   = { fg = "${sem_bg}", bg = "${sem_accent_dim}", bold = true }
+inactive = { fg = "${sem_fg_dim}", bg = "${sem_surface}" }
+sep_inner  = { open = " ", close = " " }
+sep_outer  = { open = " ", close = " " }
+
+
+[mode]
+normal_main = { fg = "${sem_bg}", bg = "${sem_accent_dim}", bold = true }
+select_main = { fg = "${sem_bg}", bg = "${sem_danger}",     bold = true }
+
+[status]
+overall   = {}
+sep_left  = { open = " ", close = " " }
+sep_right = { open = " ", close = " " }
+
+[filetype]
+rules = [
+  { name = "*/", fg = "${sem_accent_dim}" },
+  { name = "*",  fg = "${sem_fg}" },
+]
+
+[icon]
+dirs = []
+prepend_conds = [
+  { if = "dir", text = "\uf07b", fg = "${sem_accent_dim}" },
+]

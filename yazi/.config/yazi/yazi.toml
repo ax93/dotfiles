@@ -1,16 +1,17 @@
-[manager]
-show_hidden = false
-show_symlink = true
-sort_by = "alphabetical"
+[mgr]
+show_hidden    = true
+show_symlink   = true
+sort_by        = "alphabetical"
 sort_sensitive = false
-sort_reverse = false
+sort_reverse   = false
 sort_dir_first = true
+linemode       = "none"
 
 [opener]
 edit = [
-    { exec = '${EDITOR:-vi} "$@"', block = true },
+    { run = '${EDITOR:-nvim} "$@"', block = true },
 ]
 play = [
-    { exec = 'mpv "$@"', orphan = true },
+    { run = 'mpv "$@"', orphan = true },
 ]
 

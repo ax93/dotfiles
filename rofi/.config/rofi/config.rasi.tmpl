@@ -1,0 +1,92 @@
+configuration {
+    modi:                       "drun,run,window";
+    font:                       "JetBrainsMono Nerd Font 11";
+    show-icons:                 true;
+    
+    
+    display-drun:               "";
+    display-run:                "";
+    display-window:             "";
+    
+
+    run-display-format:		"{name}";	
+    window-format:              "[{w}] · {c} · {t}";
+    drun-display-format:        "{name}";
+    disable-history:            false;
+}
+
+* {
+    bg:                  ${sem_bg}eb; 
+    fg:                  ${sem_fg};
+    accent:              ${sem_accent_dim};
+    surface:             ${sem_surface};
+    
+    background-color:    transparent;
+    text-color:          @fg;
+}
+
+window {
+    background-color: @bg;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    0px;
+    padding:          10px;
+    width:            650px; 
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding:    5px;
+    children:   [ entry ];
+    border:     0px;
+}
+
+entry {
+    placeholder: "";
+    text-color:  @fg;
+}
+
+listview {
+    lines:        12;
+    columns:      1; 
+    fixed-height: 0;
+    spacing:      4px;
+    scrollbar:    false;
+    padding:      10px 0px 0px;
+    border:       0px;
+}
+
+element {
+    padding:       5px 10px;
+    border-radius: 0px;
+}
+
+element normal.normal,
+element normal.urgent,
+element normal.active,
+element alternate.normal,
+element alternate.urgent,
+element alternate.active {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element-icon {
+    size: 14px;
+    padding: 0 6px 0 0;
+    enabled: true;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color: @accent;
+    text-color:       ${sem_bg};
+}

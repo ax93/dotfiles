@@ -38,6 +38,7 @@ packages=(
   # fonts
   ttf-dejavu
   noto-fonts
+  ttf-jetbrains-mono-nerd
 
   # utilities
   polkit

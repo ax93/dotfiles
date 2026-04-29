@@ -10,21 +10,25 @@ hide_edge_borders smart
 focus_follows_mouse no
 
 # Border colors
-# class                  border          background     text         indicator       child_border
-client.focused           ${green}        ${surface_hi}  ${fg}        ${green}        ${green}
-client.unfocused         ${surface}      ${surface}     ${fg_dim}    ${surface}      ${surface}
-client.focused_inactive  ${surface_hi}   ${surface_hi}  ${fg_dim}    ${surface_hi}   ${surface_hi}
-client.urgent            ${blood}        ${blood}       ${fg}        ${blood}        ${blood}
+# class                  border            background        text              indicator         child_border
+client.focused           ${sem_accent_dim} ${sem_surface_hi} ${sem_fg}         ${sem_accent_dim} ${sem_accent_dim}
+client.unfocused         ${sem_surface}    ${sem_surface}    ${sem_fg_dim}     ${sem_surface}    ${sem_surface}
+client.focused_inactive  ${sem_surface_hi} ${sem_surface_hi} ${sem_fg_dim}     ${sem_surface_hi} ${sem_surface_hi}
+client.urgent            ${sem_danger}     ${sem_danger}     ${sem_fg}         ${sem_danger}     ${sem_danger}
 
+
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id setxkbmap fi
 
 bindsym $mod+Return       exec $term
 bindsym $mod+d            exec $menu
+bindsym $mod+t		  exec rofi -show window
 bindsym $mod+q            kill
 bindsym $mod+Shift+r      restart
 bindsym $mod+Shift+e      exec i3-msg exit
+bindsym $mod+Shift+d	  exec rofi -show run -no-show-icons
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -64,7 +68,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 
-gaps top 4
+gaps top 40
 gaps inner 8
 gaps outer 4
 smart_gaps off

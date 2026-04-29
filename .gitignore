@@ -1,3 +1,6 @@
 # Generated files from build.sh templates
-alacritty/.config/alacritty/alacritty.toml
-i3/.config/i3/config
+**/i3/config
+**/polybar/config.ini
+**/alacritty/alacritty.toml
+**/rofi/config.rasi
+**/yazi/theme.toml
