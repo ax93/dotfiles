@@ -1,0 +1,58 @@
+configuration {
+    show-icons: false;
+    font:       "JetBrainsMono Nerd Font 11";
+}
+
+* {
+    bg:                  ${sem_bg}eb;
+    fg:                  ${sem_fg};
+    accent:              ${sem_accent_dim};
+    surface:             ${sem_surface};
+
+    background-color:    transparent;
+    text-color:          @fg;
+}
+
+window {
+    background-color: @bg;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    0px;
+    padding:          15px;
+    width:            220px;
+    location:         center;
+    anchor:           center;
+}
+
+mainbox {
+    children: [ listview ];
+}
+
+listview {
+    lines:        3;
+    columns:      1;
+    fixed-height: 1;
+    spacing:      4px;
+    scrollbar:    false;
+    border:       0px;
+}
+
+element {
+    padding:       8px 12px;
+    border-radius: 0px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       ${sem_bg};
+}
+
+element-text {
+    vertical-align: 0.5;
+}

@@ -1,0 +1,109 @@
+set $mod Mod1
+set $term alacritty
+set $menu rofi -show drun
+
+font pango:JetBrainsMono Nerd Font 10
+floating_modifier $mod
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders smart
+focus_follows_mouse no
+
+# Border colors
+# class                  border            background        text              indicator         child_border
+client.focused           ${sem_accent_dim} ${sem_surface_hi} ${sem_fg}         ${sem_accent_dim} ${sem_accent_dim}
+client.unfocused         ${sem_surface}    ${sem_surface}    ${sem_fg_dim}     ${sem_surface}    ${sem_surface}
+client.focused_inactive  ${sem_surface_hi} ${sem_surface_hi} ${sem_fg_dim}     ${sem_surface_hi} ${sem_surface_hi}
+client.urgent            ${sem_danger}     ${sem_danger}     ${sem_fg}         ${sem_danger}     ${sem_danger}
+
+
+exec_always --no-startup-id feh --bg-fill ~/Pictures/green.jpg
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id picom -b
+exec_always --no-startup-id setxkbmap fi -variant nodeadkeys
+
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute         exec --no-startup-id pamixer -t
+
+#bindsym XF86MonBrightnessUp    exec --no-startup-id brightnessctl set 5%+
+#bindsym XF86MonBrightnessDown  exec --no-startup-id brightnessctl set 5%-
+
+bindsym $mod+Return       exec $term
+bindsym $mod+d            exec $menu
+bindsym $mod+w		  exec firefox
+bindsym $mod+t		  exec rofi -show window
+bindsym $mod+q            kill
+bindsym $mod+Shift+r      restart
+bindsym $mod+Shift+e      exec ~/.config/rofi/powermenu.sh
+bindsym $mod+Shift+d	  exec rofi -show run -no-show-icons
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+b split horizontal
+bindsym $mod+v split vertical
+
+bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+x layout tabbed
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    
+    bindsym Left  resize shrink width 10 px or 10 ppt
+    bindsym Down  resize grow height 10 px or 10 ppt
+    bindsym Up    resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+gaps top 40
+gaps inner 8
+gaps outer 4
+smart_gaps off

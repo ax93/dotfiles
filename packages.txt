@@ -1,0 +1,55 @@
+# Display server
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+
+# Window manager and tools
+i3-wm
+polybar
+rofi
+picom
+feh
+
+# Terminal and editor
+alacritty
+neovim
+
+# Display manager
+lightdm
+lightdm-gtk-greeter
+
+# Audio
+pipewire
+pipewire-pulse
+pipewire-alsa
+pipewire-jack
+wireplumber
+pulsemixer
+# pamixer  # uncomment on laptop for XF86Audio* keys
+
+# Fonts
+ttf-dejavu
+noto-fonts
+ttf-jetbrains-mono-nerd
+
+# System utilities
+polkit
+xdg-utils
+xdg-dbus-proxy
+
+# Dotfile management and CLI tools
+git
+stow
+gettext
+xclip
+less
+7zip
+
+# Network
+networkmanager
+wireguard-tools
+
+# Applications
+firejail
+firefox

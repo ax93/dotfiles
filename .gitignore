@@ -1,0 +1,6 @@
+# Generated files from build.sh templates
+**/i3/config
+**/polybar/config.ini
+**/alacritty/alacritty.toml
+**/rofi/config.rasi
+**/rofi/powermenu.rasi
